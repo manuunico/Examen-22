@@ -44,7 +44,9 @@ print("")
 # Mostrar el menú y procesar la opción seleccionada.
 # Utilizar las listas para obtener producto y precio.
 print("Eliga una opcion")
-print("Agua, Alfajor, Tostado")
+print("1.Agua")
+print("2.Alfajor")
+print("3.Tostado")
 opc = int(input("Eliga: "))
 print("")
 
@@ -65,8 +67,9 @@ while dinero < precios[opc]:
     print("Agua, Alfajor, Tostado")
     opc = int(input("Eliga: "))
     print("")
-print("Compra realizada correctamente.")    
-print("Saldo restante", dinero - int(precios[opc]))
+print("Compra realizada correctamente.")
+dinero =dinero - int(precios[opc])     
+print("Saldo restante", dinero)
 if opc == 1:
     cantaguas = cantaguas + 1
 if opc == 2:
@@ -77,11 +80,49 @@ elif opc == 3:
 # =========================
 # ETAPA 3 - CICLO PRINCIPAL
 # =========================
+print ("")
+print ("Eliga una opcion")
+print("1.Agua")
+print("2.Alfajor")
+print("3.Tostado")
+print("4.Consultar Pedido")
+print("5.Finalizar compra")
+opc = int(input("Eliga: "))
 
-# Modificar el programa para que continúe funcionando
-# hasta que el usuario decida finalizar la compra.
-
-
+while opc == 1 or 2 or 3:
+    print("producto: ", productos[opc])
+    print("Precio:", precios[opc])
+    while dinero < precios[opc]:
+        print("saldo insuficiente")
+        print("")
+        print("Eliga una opcion")
+        print("Agua, Alfajor, Tostado")
+        opc = int(input("Eliga: "))
+        print("")
+    print("Compra realizada correctamente.")
+    dinero =dinero - int(precios[opc]) 
+    print("Saldo restante", dinero)
+    if opc == 1:
+        cantaguas = cantaguas + 1
+    if opc == 2:
+        cantalf = cantalf + 1
+    elif opc == 3:
+        canttost = canttost + 1 
+    print ("")
+    print ("Eliga una opcion")
+    print("1.Agua")
+    print("2.Alfajor")
+    print("3.Tostado")
+    print("4.Consultar Pedido")
+    print("5.Finalizar compra")
+    opc = int(input("Eliga: "))
+if opc == 5:
+    print("Gracias por su compra")
+    print("Dinero gastado:", dinerogastado)
+    print("cantidad de productos: ", canttotal)
+    print("Cantidad de aguas: ", cantaguas)
+    print("Cantidadd de alfajores: ", cantalf)
+    print("Cantidad de tostados: ", canttost)
 # =========================
 # ETAPA 4 - PEDIDO Y RESUMEN
 # =========================
