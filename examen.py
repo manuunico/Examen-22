@@ -67,6 +67,13 @@ while dinero < precios[opc]:
     print("")
 print("Compra realizada correctamente.")    
 print("Saldo restante", dinero - int(precios[opc]))
+if opc == 1:
+    cantaguas = cantaguas + 1
+if opc == 2:
+    cantalf = cantalf + 1
+elif opc == 3:
+    canttost = canttost + 1
+
 # =========================
 # ETAPA 3 - CICLO PRINCIPAL
 # =========================
