@@ -20,8 +20,8 @@
 nombreclient = input("Nombre: ")
 dinero = int(input("¿Cual es su saldo?"))
 #kiosco
-productos = ["Agua", "Alfajor", "Tostado"]
-precios = [700, 900, 2200]
+productos = ["", "Agua", "Alfajor", "Tostado"]
+precios = [0, 700, 900, 2200]
 #cantidades
 cantalf = 0
 cantaguas = 0
@@ -36,14 +36,37 @@ print("Dinero disponible:", dinero)
 print("")
 print(f"Hola {nombreclient}.")
 print("Saldo disponible: $", dinero)
+print("")
 # =========================
 # ETAPA 2 - COMPRAS
 # =========================
 
 # Mostrar el menú y procesar la opción seleccionada.
 # Utilizar las listas para obtener producto y precio.
+print("Eliga una opcion")
+print("Agua, Alfajor, Tostado")
+opc = int(input("Eliga: "))
+print("")
 
+while opc > 3:
+    print("opcion incorrecta")
+    print("Eliga una opcion")
+    print("Agua, Alfajor, Tostado")
+    opc = int(input("Eliga: "))
+    print("")
+    
+print("producto: ", productos[opc])
+print("Precio:", precios[opc])
 
+while dinero < precios[opc]:
+    print("saldo insuficiente")
+    print("")
+    print("Eliga una opcion")
+    print("Agua, Alfajor, Tostado")
+    opc = int(input("Eliga: "))
+    print("")
+print("Compra realizada correctamente.")    
+print("Saldo restante", dinero - int(precios[opc]))
 # =========================
 # ETAPA 3 - CICLO PRINCIPAL
 # =========================
